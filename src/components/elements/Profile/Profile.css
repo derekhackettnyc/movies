@@ -1,0 +1,134 @@
+html {
+    font-size: 62.5%; }
+  
+  *,
+  ::after,
+  ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; }
+  
+    table {
+    border-collapse: collapse;
+      width:100%;
+  }
+  
+  td, th {
+    text-align: left;
+    padding: .54rem;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+      padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    letter-spacing: .25rem;
+    /* text-transform: uppercase; */
+  }
+  
+
+  
+  /* tbody.group {
+      border-bottom: 1px solid #dddddd;
+  }
+  
+  tbody.group:nth-child(even) {
+      background-color: #dddddd;
+  } */
+  
+  tr:nth-child(even){background-color: #f2f2f2;}
+  tr:hover {background-color: #ddd;}
+  
+  img {
+    max-width: 100%;
+    vertical-align: top; }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    letter-spacing: 0rem; }
+  
+  body {
+    box-sizing: border-box; }
+  
+  body {
+    font-family: "Helvetica Neue", Helvetica, "Noto Sans", sans-serif, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem; }
+  
+  ul {
+    list-style-type: none; }
+  
+  
+  
+  .person {}
+  .person img {display: block; margin: 0 auto;}	
+  .person h1 { text-transform: uppercase; letter-spacing: .25rem; text-align: center; padding: .5rem;}
+  .person h2 {letter-spacing: .15em; text-transform: uppercase; text-align: center; padding: .5rem;}
+  .person h3 {font-size: .9em; color:#b8a329; text-transform:capitalize; padding: .25em; font-weight: 400; text-transform: uppercase;}
+  
+  .portrait {background-color:lightslategrey; color:white;} 
+  .bio {background-color: #eee; padding: 2rem 1rem;}
+  .personal-info {text-align: center; padding:2rem 0; background-color: #ddd; width:100%;}
+  .personal-info .key {font-weight: 400}
+  .personal-info .property {color: dimgray; margin-bottom: 1rem;}
+  .movies {display: flex;
+          flex-wrap: nowrap;
+          background-color: lemonchiffon;
+          justify-content: space-between;
+          overflow-x: auto;
+          padding-bottom: 1rem;
+          width:100%;
+          align-items: center;
+          margin: 0 auto;
+          }
+        
+  .movie_card {
+      display: inline-block;
+      flex: 0 0 155px;
+      background: white; box-shadow: 0 3px 5px rgba(0,0,0,0.3); padding-top: 0em; 
+      margin:1rem 0.5rem;
+  }
+  
+  .movie_card p {
+      font-size:1.2rem;
+      padding:.5rem;
+  }
+  
+  .credit-list {
+      width: 90%;
+    background: white; box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+    margin: 2rem auto;
+    font-size:1.4rem;
+  }
+  
+  @media (min-width: 1024px) {
+  
+      body {margin:2rem; overflow-x: hidden;}
+  
+      .person {
+          display: grid;
+          grid-template-columns: 1fr 2fr 1fr;
+          justify-items: center;
+          align-content: center;
+          justify-content: center;
+          grid-gap: 2rem;
+          margin: 0 auto;
+      }
+      .protrait {
+          border:3px solid green;
+      }
+  
+      .movies {
+          grid-column: 1/4;
+  
+      }
+  
+      .credit-list {
+          grid-column: 1/4;
+          font-size:1.8rem;
+      }
+      
+  }  

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Person Layout</title>
+    <style>
+    .normal {
+  padding: 1rem 1rem 2rem 1rem;
+  font-size: 1.6rem; }
+
+.center {
+  text-align: center; }
+
+.grey-bg {
+  background-color: #eee; }
+
+.white-bg {
+  background-color: white; }
+
+html {
+  font-size: 62.5%; }
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+  table {
+  border-collapse: collapse;
+}
+
+td, th {
+  text-align: left;
+  padding: .54rem;
+  /* border: 1px solid #ddd; */
+}
+
+th {
+    padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+  letter-spacing: .25rem;
+  /* text-transform: uppercase; */
+}
+
+td.title {
+    width:50%;
+}
+
+ tbody.group {
+    border-bottom: 1px solid #dddddd;
+}
+
+/* 
+tbody.group:nth-child(even) {
+    background-color: #dddddd;
+}  */
+
+tr:nth-child(even){background-color: #f2f2f2;}
+tr:hover {background-color: #ddd;}
+
+img {
+  max-width: 100%;
+  vertical-align: top; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  letter-spacing: 0rem; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "Noto Sans", sans-serif, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem; }
+
+ul {
+  list-style-type: none; }
+
+
+
+.person {}
+.person img {display: block; margin: 0 auto;}	
+.person h1 { text-transform: uppercase; letter-spacing: .25rem; text-align: center; padding: .5rem;}
+.person h2 {letter-spacing: .15em; text-transform: uppercase; text-align: center; padding: .5rem;}
+.person h3 {font-size: .9em; color:#b8a329; text-transform:capitalize; padding: .25em; font-weight: 400; text-transform: uppercase;}
+
+.portrait {background-color:lightslategrey; color:white;} 
+.bio {background-color: #eee; padding: 2rem 1rem;}
+.personal-info {text-align: center; padding:2rem 0; background-color: #ddd; width:100%;}
+.personal-info .key {font-weight: 400}
+.personal-info .property {color: dimgray; margin-bottom: 1rem;}
+.movies {display: flex;
+        flex-wrap: nowrap;
+        background-color: lemonchiffon;
+        justify-content: space-between;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        width:100%;
+        align-items: center;
+        margin: 0 auto;
+        }
+      
+.movie_card {
+    display: inline-block;
+    flex: 0 0 155px;
+    background: white; box-shadow: 0 3px 5px rgba(0,0,0,0.3); padding-top: 0em; 
+    margin:1rem 0.5rem;
+}
+
+.movie_card p {
+    font-size:1.2rem;
+    padding:.5rem;
+}
+
+.credit-list {
+    width: 90%;
+  background: white; box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+  margin: 2rem auto;
+  font-size:1.4rem;
+}
+
+@media (min-width: 1024px) {
+
+    body {margin:2rem; overflow-x: hidden;}
+
+    .person {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        justify-items: center;
+        align-content: center;
+        justify-content: center;
+        grid-gap: 2rem;
+        margin: 0 auto;
+    }
+    .protrait {
+        border:3px solid green;
+    }
+
+    .movies {
+        grid-column: 1/4;
+
+    }
+
+    .credit-list {
+        grid-column: 1/4;
+        font-size:1.8rem;
+    }
+    
+}    
+
+  </style>
+</head>
+<body>
+    <div class="person">
+        <div class='portrait'>
+            <h1>Halle Berry</h1>	
+            <img src="http://image.tmdb.org/t/p/w500/hdUqx0on0cqbFuJCZtEGU42UWe5.jpg" alt="profile-pic">
+        </div> 
+
+        <div class='bio'>	
+            <h2>Biography</h2>
+            <p class="item-description">Halle Maria Berry is an American actress and former fashion model. She won an Academy Award for Best Actress in 2002 for her performance in Monster's Ball, becoming the first and, as of 2014, the only woman of African-American descent to win an Oscar for a leading role. She is one of the highest paid actresses in Hollywood and has been involved in the production side of several of the films in which she performed. Berry is also a Revlon spokes-model.\n\nBefore becoming an actress, Berry entered and placed in several beauty contests, including the Miss USA Pageant and Miss World Pageants. </p>
+        </div>
+
+        <div class="personal-info">	
+            <h2 class='header'>Personal Info</h2>                          
+            <h4 class='key'>Know For</h4>
+            <p class='property'>Acting</p>
+            <h4 class='key'>Gender</h4>
+            <p class='property'>Female</p>
+            <h4 class='key'>Know Credits</h4>
+            <p class='property'>94</p>
+            <h4 class='key'>Birthday</h4>
+            <p class='property'>1966-08-14</p>
+            <h4 class='key'>Place of Birth</h4>
+            <p class='property'>Cleveland, Ohio, USA</p>
+            <h4 class='key'>Official Site</h4>
+            <p class='property'>https://www.hallewood.com/</p>
+        </div>
+
+        <div class="movies">  
+            <div class='movie-card'>
+                <h2>Highest Grossing Movies</h2>
+            </div>             
+        </div>
+
+        <div class='credit-list'>
+                <table class='credits'>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Title</th>
+                            <th>Character</th>
+                        </tr>                      
+                    </thead>
+                <table>
+                  
+        </div>
+    </div>
+
+   <script>
+        // const endpoint = 'https://api.themoviedb.org/3/person/4587?api_key=844dba0bfd8f3a4f3799f6130ef9e335&language=en-US'       
+        // fetch(endpoint)
+        // .then(result => result.json())
+        // .then(result => {
+        //     console.log('Person', result)
+        // })  
+        
+        
+        const fetchData = async (endpoint) => {
+                  
+            const res = await fetch(endpoint)
+            const result = await res.json()
+            return result
+        }
+
+
+
+        const App = async () => {
+
+          // const groupBy = (objectArray, property) => {
+          //       return objectArray.reduce((total, obj) => {
+          //           const key = obj[property];
+          //           delete obj[property];
+          //           (total[key] = total[key] || []).push(obj);
+          //           return total;
+          //   }, {});
+          //   }
+            
+          //   const endpointPerson = 'https://api.themoviedb.org/3/person/4587?api_key=844dba0bfd8f3a4f3799f6130ef9e335&language=en-US' 
+          //   let data = await fetchData(endpointPerson)
+          //   console.log(data)
+
+
+
+
+
+          //   const endpointMovies = 'https://api.themoviedb.org/3/discover/movie?with_people=4587&sort_by=revenue.desc&api_key=844dba0bfd8f3a4f3799f6130ef9e335'
+          //   data = await fetchData(endpointMovies)
+          //   console.log(data)
+
+          //   data.results.forEach( movie => {
+          //           const movieMarkUp = `
+          //           <div class='movie_card'>
+          //               <img src='http://image.tmdb.org/t/p/w150_and_h225_bestv2/${movie.poster_path}' alt='movie' />
+          //               <p>${movie.title}</p>
+          //           </div>                    
+          //           `                              
+          //           document.querySelector('.movies').insertAdjacentHTML('beforeend',movieMarkUp)
+          //   })            
+
+
+
+
+            const endpointCharacter = 'https://api.themoviedb.org/3/person/4587/movie_credits?api_key=844dba0bfd8f3a4f3799f6130ef9e335&language=en-US'
+            data = await fetchData(endpointCharacter)
+            //console.log(data)
+
+            const actingMovies =  data.cast.map((movie) => {
+                return {
+                    year : (movie.release_date || 'XXXX-00-00').substring(0,4),
+                    title: movie.title,
+                    character: movie.character
+                }
+            }).filter(movie => movie.year !== 'XXXX')
+
+            const creditTable = actingMovies.map( movie => {
+                return(`
+                    <tr>
+                    <td>${movie.year}</td>
+                    <td class='title'>${movie.title} </td>
+                    <td>${movie.character}</td>
+                    </tr>
+                    `)                                
+                }).join('') 
+
+            //document.querySelector('.credits_tbody').insertAdjacentHTML('beforeend',creditTable)            
+
+
+
+            const groupedYears = actingMovies
+                    .filter(movie => movie.year !== 'XXXX')
+                    .reduce((h, {year,title,character}) => Object.assign(h, { [year]:( h[year] || [] ).concat({title,character})}), {})
+
+            console.log('years',groupedYears)
+    
+            const groupedKeys = Object.keys(groupedYears)
+
+            console.log('keys',groupedKeys);
+
+
+
+            groupedKeys.forEach( key => {
+                const creditTable = groupedYears[key].map( movie => {
+                    return(`
+                        <tr>
+                        <td>${key}</td>
+                        <td class='title'>${movie.title} </td>
+                        <td>${movie.character}</td>
+                        </tr>
+                        `)                                
+                    }).join('') 
+                    
+                  document.querySelector('.credits').insertAdjacentHTML('beforeend',`<tbody class='group'>${creditTable}</tbody>`)
+            })
+
+
+
+
+
+
+
+
+
+
+        
+            // document.querySelector('.credits').addEventListener('click', (event) => {
+                
+            //     const columnClicked = event.target.innerText.toUpperCase()
+            //     console.log(columnClicked);
+            //     if(columnClicked === 'YEAR') {
+            //         console.log('you clicked the Year field !!!!!')
+            //         actingMovies.sort((a,b) => (a.year < b.year) ? 1 : ((b.year < a.year) ? -1 : 0))
+            //         console.log(actingMovies)
+            //         document.querySelector('.credits_tbody').innerHTML=''
+
+            //       const creditTable = actingMovies.map(movie => {
+            //         return (`
+            //         <tr>
+            //         <td>${movie.year}</td>
+            //         <td class='title'>${movie.title} </td>
+            //         <td>${movie.character}</td>
+            //         </tr>
+            //         `)
+            //       }).join('')
+
+            //       document.querySelector('.credits_tbody').insertAdjacentHTML('beforeend', creditTable) 
+
+            //     }
+                 
+            //     //.sort((a,b) => (a.release_date < b.release_date) ? 1 : ((b.release_date < a.release_date) ? -1 : 0));
+            // })        
+        
+
+        
+        }
+        
+
+        // const getJobs = async () => {
+        //   const endpointJobs = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?page=1'
+        //     data = await fetchData(endpointJobs)
+        //     //console.log(data)
+        //     const jobs =  data.map((job) => {
+
+        //           return {
+        //               company : job.company,
+        //               title: job.title,
+        //               location	: job.location	
+        //           }
+        //     })
+
+        //     const jobTable = jobs.map( job => {
+        //     return(`
+        //         <tr>
+        //         <td>${job.company}</td>
+        //         <td class='title'>${job.title} </td>
+        //         <td>${job.location	}</td>
+        //         </tr>
+        //         `)                                
+        //     }).join('') 
+
+        //     document.querySelector('.credits_tbody').insertAdjacentHTML('beforeend',jobTable) 
+            
+            
+        //     document.querySelector('.credits').addEventListener('click', (event) => {
+                
+        //         const columnClicked = event.target.innerText.toUpperCase()
+        //         console.log(columnClicked);
+        //         if(columnClicked === 'YEAR') {
+        //             console.log('you clicked the Year field !!!!!')
+        //             jobs.sort((a,b) => (a.company > b.company) ? 1 : ((b.company > a.company) ? -1 : 0))
+        //             console.log(jobs)
+        //             document.querySelector('.credits_tbody').innerHTML=''
+
+        //           const creditTable = jobs.map(movie => {
+        //             return (`
+        //             <tr>
+        //             <td>${movie.company}</td>
+        //             <td class='title'>${movie.title} </td>
+        //             <td>${movie.location	}</td>
+        //             </tr>
+        //             `)
+        //           }).join('')
+
+        //           document.querySelector('.credits_tbody').insertAdjacentHTML('beforeend', creditTable) 
+
+        //         }
+                 
+                //.sort((a,b) => (a.release_date < b.release_date) ? 1 : ((b.release_date < a.release_date) ? -1 : 0));
+        //     })              
+        // }
+
+
+        
+        console.clear()
+        App()
+
+        //getJobs()
+        // let d=new Date('Tue dec 12 15:09:15 UTC 2019')
+        // const mmddyyyy = d.toLocaleString('en-US', { timeZone: 'UTC' })
+        // console.log(mmddyyyy.substr(0,mmddyyyy.indexOf(",")))
+
+
+// var contacts= [
+// {
+//   "id": 1,
+//   "name": "xyz",
+//   "email": "abc@gmail.com",
+//   "phone": "0000958331"
+// },
+// {
+//   "id": 2,
+//   "name": "abc",
+//   "email": "xyz@gmail.com",
+//   "phone": "0110958332"
+// },
+// {
+//   "id": 3,
+//   "name": "efg",
+//   "email": "def@gmail.com",
+//   "phone": "0220958333"
+// }
+// ]
+
+// function sortName(){
+//   order = !order;
+//   contacts.JSON.parse.sort(function (a, b) {
+//     const x = a.name.toLowerCase();
+//     const y = b.name.toLowerCase();
+//     return (order ? x > y : x < y);
+//   });
+//   console.log(contacts);
+// }
+        
+
+// var tableJSON = '[{ "name":"Computer Architecture", "category":"Computers", "Price": "125.60"},{ "name":"Asp.Net 4 Blue Book", "category":"Programming", "Price": "85.00"},{ "name":"Popular Science", "category":"Science", "Price": "385.00"},{ "name":"Mastering ReactJS", "category":"Programming", "Price": "65.00"}]'
+// var tableObj = JSON.parse(tableJSON);
+
+// var order = true;
+
+// function sortName(){
+//   order = !order;
+//   tableObj.sort(function (a, b) {
+//     const x = a.name.toLowerCase();
+//     const y = b.name.toLowerCase();
+//     return (order ? x > y : x < y);
+//   });
+// }
+// sortName()
+
+// console.log(tableObj)
+
+// tableObj.sort((a,b) => (a.name < b.name) ? 1 : ((b.name < a.name) ? -1 : 0));
+// console.log(tableObj)
+
+
+// const cars = [
+//     { make: 'audi', model: 'r8', year: '2012' }, 
+//     { make: 'audi', model: 'rs5', year: '2013' }, 
+//     { make: 'ford', model: 'mustang', year: '2012' }, 
+//     { make: 'ford', model: 'fusion', year: '2015' }, 
+//     { make: 'kia', model: 'optima', year: '2012' }
+// ];
+
+// result = cars.reduce((h, {model,year,make}) => {
+//   return Object.assign(h, { [make]:( h[make] || [] ).concat({model,year})})
+// }, {})
+
+// console.log(result)
+
+
+
+// const groupBy = (objectArray, property) => {
+//     return objectArray.reduce((total, obj) => {
+//         console.log('total',total)
+//         const key = obj[property];
+//         delete obj[property];
+//         (total[key] = total[key] || []).push(obj);
+//         return total;
+//     }, {});
+// }
+
+// const groupedCars = groupBy(cars, 'make');
+// console.log(groupedCars);
+
+
+            //.sort((a,b) => (a.release_date < b.release_date) ? 1 : ((b.release_date < a.release_date) ? -1 : 0));
+
+            //list.sort((a, b) => (a.color > b.color) ? 1 : (a.color === b.color) ? ((a.size > b.size) ? 1 : -1) : -1 )
+
+            //console.log(actingMovies);
+
+
+
+   </script> 
+</body>
+</html>
+

@@ -12,43 +12,15 @@ import './Home.css';
 
 const Home = () => {
 
-  const [isLoading, data, makeRequest] = useApiRequest('movie/popular')
-
-  // const [isLoading, data] = useResources(`${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
+  const [isLoading, data, setData, makeRequest] = useApiRequest()
 
   React.useEffect(() => {
     console.log("RESULT >>>>>",data)
   },[data])
 
   React.useEffect(() => {
-    makeRequest({params:{page:1}})
+    makeRequest({endpoint:'movie/popular', params:{page:1}})
   },[])
-
-  // React.useEffect(() => {
-  //   (async () => {
-
-  //     setData({ ...data, loading: true })
-
-  //     const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`
-  //     const result = await fetch(endpoint)
-  //     const fetchData = await result.json()
-
-  //     console.log("fetchData", fetchData)
-
-  //     await delay(1000) // development only
-
-      // setData({
-      //   ...data,
-      //   movies: fetchData.results,
-      //   totalPages: fetchData.total_pages,
-      //   heroImage: heroImage || fetchData.results[0],
-      //   loading: false,
-      //   currentPage: fetchData.page,
-      // })
-
-  //   })()
-  // }, [])
-
 
   // componentDidMount() {
   //   if (sessionStorage.getItem('HomeState')) {
@@ -62,19 +34,17 @@ const Home = () => {
   // }
 
   const searchItems = (searchTerm) => {
-    let endpoint = '';
-    this.setState({
-      movies: [],
-      loading: true,
+
+    setData({
+      movies:[],
       searchTerm
     })
 
-    if (searchTerm === "") {
-      endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
-    } else {
-      endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${searchTerm}`;
-    }
-    this.fetchItems(endpoint);
+    if(searchTerm)
+      makeRequest({ endpoint:'/search/movie', params:{query:searchTerm}})
+    else
+      makeRequest({endpoint:'movie/popular', params:{page:1}})
+
   }
 
   const loadMoreItems = () => {
@@ -82,20 +52,16 @@ const Home = () => {
     const { searchTerm, currentPage } = data;
 
     let endpoint = '';
-    // this.setState({ loading: true }) 
 
-    // setData({ ...data, loading: true })
-
-    if (searchTerm === '') {
+    if (searchTerm) {
+      console.log("i was here")
+      makeRequest({ endpoint:'search/movie', params:{query:searchTerm, page:currentPage + 1}})
       // endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=${currentPage + 1}`;
-      makeRequest({params:{page:currentPage + 1}})
+      
     } else {
-      endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${searchTerm}&page=${currentPage + 1}`;
+      makeRequest({ endpoint:'movie/popular', params:{page:currentPage + 1}})
+      // endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${searchTerm}&page=${currentPage + 1}`;
     }
-
-    
-    // this.fetchItems(endpoint);
-    // useResources(endpoint)
   }
 
   const fetchItems = (endpoint) => {
@@ -132,7 +98,7 @@ const Home = () => {
             title={heroImage.title}
             text={heroImage.overview}
           />
-          <SearchBar callback={this.searchItems} />
+          <SearchBar term={searchTerm} callback={searchItems} />
         </div>
       }
 

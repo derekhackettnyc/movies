@@ -5,7 +5,7 @@ import './SearchBar.css';
 
 class SearchBar extends Component {
   state = {
-    value: ''
+    value: this.props.term || ''
   }
   // Must have this here so we can reset it
   timeout = null;

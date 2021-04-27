@@ -10,6 +10,13 @@ import useApiRequest from '../hooks/useApiRequest'
 // import useResources from '../hooks/useApiRequest'
 import './Home.css';
 
+//
+//
+// This will be a complete refactor - using hooks and local state for now.
+// Created on the branch home-page
+//
+//
+
 const Home = () => {
 
   const [isLoading, data, setData, makeRequest] = useApiRequest()
